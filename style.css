@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 *{
     padding: 0;
     margin: 0;
@@ -9,4 +10,161 @@
     --color-primary-blue: #00288E;
     --color-secondary-blue: #D3E4FE;
     --color-third-blue: #EFF4FF;
+    --color-primary-gray: #757684;
+    --color-secondary-gray: #B0B7C3;
+    --color-third-gray: #E0E4EA;
+    --color-dark-gray: #0B1C30;
+
+    --text-color: var(--color-dark-gray);
+    --text-inverse-color: var(--color-third-blue);
+    --text-strong-color: var(--color-primary-blue);
+    --bg-color: var(--color-third-blue);
+    --border: 1px solid var(--color-secondary-gray);
+
+    /*typography*/
+    --font-family: 'inter', sans-serif;
+    --font-size-xl: 24px;
+    --font-size-base: 16px;
+    --font-size-lg: 18px;
+    --font-size-sm: 14px;
+    --font-weight-normal: 400;
+    --font-weight-bold: 700;
+
+    /*spacing*/
+    --space-base: 8px;
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    color: var(--text-color);
+    justify-content: center;
+    align-items: center;
+}
+.auth{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    gap: calc(var(--space-base) * 4);
+    border: var(--border);
+    border-radius: var(--space-sm);
+}
+.header_auth{
+    width: 100%;
+    background-color: var(--color-primary-blue);
+    color: var(--color-third-blue);
+    padding: calc(var(--space-base) * 5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.header_auth p{
+    font-size: .8rem;
+}
+.auth_buttons{
+    display: flex;
+    justify-content: center;
+    padding: var(--space-sm);
+    background-color: var(--color-secondary-blue);
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    border-radius: var(--space-sm);
+    position: relative;
+}
+.auth_buttons button{
+    background-color: transparent;
+    border: none;
+    width: 50%;
+    font-weight: bold;
+    z-index: 2;
+}
+.auth_buttons button:first-child{
+    color: var(--text-strong-color);
+}
+.auth_buttons::before{
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 2%;
+    width: 50%;
+    background-color: #fff;
+    height: 80%;
+    border-radius: var(--space-sm);
+    transition: left .2s ease-out;
+}
+/*classe pour le toggle sur les champs de connexion*/
+
+
+.form_login_active::before{
+    left: 48%;
+}
+.form_login_active.auth_buttons button:first-child{
+    color: var(--text-color);
+}
+.form_login_active.auth_buttons button:last-child{
+    color: var(--color-primary-blue);
+}
+.auth_forms{
+    width: 100%;
+}
+.form_login {
+    display: none;
+}
+.form_inscription, .form_login{
+    width: 90%;
+    margin: auto;
+    padding-bottom: 5%;
+}
+.form_inscription form, .form_login form{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+form input{
+    height: 28px;
+    border: var(--border);
+    border-radius: var(--space-xs);
+    padding: var(--space-md);
+}
+form label{
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+}
+
+
+button[type="submit"]{
+    background-color: var(--color-primary-blue);
+    border: none;
+    padding: 10px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-sm);
+    border-radius: var(--space-xs);
+    scale: 1;
+    transition: scale .2s ease-out;
+}
+button[type="submit"]:active{
+    scale: 0.99;
+}
+
+.form_active.auth_forms .form_inscription{
+    display: none;
+}
+.form_active.auth_forms .form_login{
+    display: flex;
 }

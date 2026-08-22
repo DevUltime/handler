@@ -4,45 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
     <title>Nexora | Connexion</title>
 </head>
 
 <body>
-    <section>
+    <section class="auth">
 
-        <div>
-            <img src="" alt="">
+        <div class="header_auth">
+            <img src="icons/logo_nexora.svg" alt="logo">
             <h2>Nexora</h2>
             <p>Empowering Educators, Inspiring Minds</p>
         </div>
 
-        <div>
+        <div class="auth_buttons">
             <button>sign Up</button>
             <button>Sign In</button>
         </div>
 
-        <div>
+        <div class="auth_forms">
 
-            <div>
+            <div class="form_inscription">
+                <form action="">
+                    <h3>Welcome to <span>Nexora</span>!</h3>
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name">
+                    <label for="first-name">First Name</label>
+                    <input type="text" name="first_name" id="first-name">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password">
+                    <label for="confirmation">Confirmation</label>
+                    <input type="password" name="confirmation" id="confirmation">
+                    <button type="submit">Sign UP <img src="icons/arrow_back.svg" alt="icon"></button>
 
-                <div>
-                    <form action="">
-                        <h3>Welcome to <span>Nexora</span></h3>
-                        <label for="name">Name</label>
-                        <input type="text" name="name" id="name">
-                        <label for="first-name">First Name</label>
-                        <input type="text" name="first_name" id="first-name">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email">
-                        <label for="password">Password</label>
-                        <input type="password" name="password" id="password">
-                        <label for="confirmation">Confirmation</label>
-                        <input type="password" name="confirmation" id="confirmation">
-                        <button>Sign UP <img src="icons/arrow_back.svg" alt="icon"></button>
+                </form>
+            </div>
 
-                    </form>
-                </div>
-
+            <div class="form_login">
                 <form action="">
                     <h3>WELCOME BACK!</h3>
                     <p>Please enter your credentials to access your dashboard.</p>
