@@ -1,0 +1,12 @@
+
+/*afficher et masquer l' aside.*/
+.asideActive{
+    translate: 0 0;
+}
+
+/*affichage des sections du dashboard*/
+
+.sectionActive{
+    display: flex;
+}
+
