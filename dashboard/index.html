@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styleJs.css">
     <script defer src="scriptStyle.js"></script>
     <script defer src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
     <title>Dashboard | Nexora</title>
 </head>
 
@@ -94,7 +95,52 @@
         <section class="dashboard">
 
             <div class="display-zone display-zone-dashboard">
-                <h3>Aucune information sur le dashboard</h3>
+                
+                <div class="dashboard-zone-header">
+                    <h2>Dashboard</h2>
+
+                    <span>terminale <img src="icons/sort arrow.svg" alt="icon"></span>
+                </div>
+
+                <div class="container-infos-dashboard">
+
+                    <div class="container-teacher-name-dashboard">
+                        <span>Good morning, </span>
+                        <span class="teacher-name-dashboard">Dr. Nekam</span>
+                    </div>
+
+                    <div class="container-current-class-dashboard">
+                        <p>current class</p>
+                        <span class="current-class-dashboard">50 Students</span>
+                    </div>
+
+                    <div class="container-class-average-dashboard">
+                        <p>class average</p>
+                        <span class="class-average-dashboard">80%</span>
+                    </div>
+
+                    <div class="container-success-rate-dashboard">
+                        <p>success rate</p>
+                        <span class="success-rate-dashboard">93%</span>
+                    </div>
+
+                    <div class="container-top-perforner-dashboard">
+                        <p>top performer</p>
+                        <span class="top-performer-name-dasboard">Jordan dev</span>
+                        <span class="top-performer-average-dashboard">19/20</span>
+                    </div>
+
+                </div>
+
+                <div class="chart-statistics-dashboard">
+                    <h3>Evaluation comparison</h3>
+                    <p>Success rate (%)</p>
+
+                    <div class="container-chart-dashboard">
+                        <canvas id="chart-dashboard" style="height: 100%; width: 100%;"></canvas>
+                    </div>
+                </div>
+
             </div>
 
             <div class="display-zone display-zone-myClasses">
