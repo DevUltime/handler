@@ -20,6 +20,7 @@
     --text-inverse-color: var(--color-third-blue);
     --text-strong-color: var(--color-primary-blue);
     --bg-color: var(--color-third-blue);
+    
     --border: 1px solid var(--color-secondary-gray);
 
     /*typography*/
