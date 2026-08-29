@@ -18,7 +18,7 @@
 
     <header class="nav-bar">
 
-        <div class="menu-hamburger-nav">
+        <div class="menu-hamburger-nav" onclick = afficherAside()>
             <div class="fst-bar fst-bar-nav"></div>
             <div class="snd-bar snd-bar-nav"></div>
         </div>
@@ -36,7 +36,7 @@
     <main>
 
         <aside class="side-bar">
-            <div class="close-aside">
+            <div class="close-aside" onclick=masquerAside()>
                 <div class="fst-bar fst-bar-aside"></div>
                 <div class="snd-bar snd-bar-aside"></div>
             </div>
@@ -95,11 +95,19 @@
         <section class="dashboard">
 
             <div class="display-zone display-zone-dashboard">
-                
+
                 <div class="dashboard-zone-header">
                     <h2>Dashboard</h2>
 
-                    <span>terminale <img src="icons/sort arrow.svg" alt="icon"></span>
+                    <div>
+                        <select name="class-active-dashboard" id="class-active-dashboard">
+                            <option value="terminale">Terminale</option>
+                            <option value="terminale">Seconde</option>
+                            <option value="terminale">Premiere</option>
+                        </select>
+
+                    </div>
+
                 </div>
 
                 <div class="container-infos-dashboard">
@@ -143,12 +151,195 @@
 
             </div>
 
+
             <div class="display-zone display-zone-myClasses">
-                <h3>Aucune information sur mes classes</h3>
+
+                <div class="myClasses-zone-header">
+                    <h2>My classes</h2>
+                    <p>Manage your assigned classes and student performance.</p>
+                    <span>
+                        <img src="icons/Icon_class 1.svg" alt="icon">
+                        <span class="lesson-learned">Physique - Chimie</span>
+                    </span>
+                </div>
+
+                <div class="container-class-myClasses">
+
+                    <div>
+                        <h3>6ème A</h3>
+                        <p>63 Students</p>
+                    </div>
+
+                    <div>
+                        <h3>Seconde C</h3>
+                        <p>25 Students</p>
+                    </div>
+
+                    <div>
+                        <h3>3ème Esp</h3>
+                        <p>47 Students</p>
+                    </div>
+
+                </div>
+
             </div>
 
             <div class="display-zone display-zone-myStudents">
-                <h3>Aucune information sur mes élèves</h3>
+
+                <div class="myStudents-zone-header">
+                    <h2>My Students</h2>
+
+                    <div>
+                        <select name="class-active-myStudents" id="class-active-myStudents">
+                            <option value="terminale">Terminale</option>
+                            <option value="terminale">Seconde</option>
+                            <option value="terminale">Premiere</option>
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class="container-input-myStudents">
+                    <span>
+                        <img src="icons/Icon_class 1.svg" alt="icon">
+                        <span class="lesson-learned">Physique - Chimie</span>
+                    </span>
+
+                    <div>
+                        <input type="text" id="input-search-myStudents" placeholder="Search by name or ID...">
+                        <img src="icons/Icon_loupe.svg" alt="">
+                    </div>
+                </div>
+
+                <div class="container-table-students-myStudents">
+
+                    <table class="table-students-myStudents" onclick="afficherINformationElevemyStudent(event)">
+
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Date of birth</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>836353</td>
+                                <td>Emma Anderson</td>
+                                <td>18/09/2010</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td>836172</td>
+                                <td>Marcus Johnson</td>
+                                <td>14/07/2004</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td>837383</td>
+                                <td>Sophia Lee</td>
+                                <td>23/08/2007</td>
+                                <td>...</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <!--button pour ajouter un eleve -->
+                <div class="btn-add-student-myStudents" onclick="afficherFormulaireAjoutEleve()">
+                    <img src="icons/Icon_add.svg" alt="icon">
+                </div>
+
+                <!--formulaire pour ajouter un eleve-->
+                <div class="container-form-add-student" onclick="masquerContainerFormAjouterEleve(event)">
+
+                    <form action="" class="form-add-student">
+                        <label for="id">ID</label>
+                        <input type="number" name="id-student" id="id-student">
+                        <label for="name">Name</label>
+                        <input type="text" name="student-name" id="student-name">
+                        <label for="date-birth">Date of Birth</label>
+                        <input type="date" name="date-birth" id="date-birth">
+                        <button type="submit">Add</button>
+                    </form>
+
+                </div>
+
+                <!--modal affichage d'un eleve-->
+
+                <div class="container-modal-informations-myStudent" onclick="masquerContainerModal(event)">
+
+                    <div class="modal-informations-myStudent">
+                        <h3>Informations</h3>
+
+                        <div>
+                            <span>ID</span>
+                            <span>836723</span>
+                        </div>
+
+                        <div>
+                            <span>Name</span>
+                            <span>Tiobou kem jordan</span>
+                        </div>
+
+                        <div>
+                            <span>Date of Birth</span>
+                            <span>18/09/2010</span>
+                        </div>
+
+                        <div>
+                            <button onclick="afficherModalModificationEleveMyStudent()">
+                                <img src="icons/Icon_edit.svg" alt="icon">
+                                <span>Edit</span>
+                            </button>
+
+                            <button onclick="afficherModalSuppresionEleveMyStudent()">
+                                <img src="icons/Icon_delete.svg" alt="icon">
+                                <span>Delete</span>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!--modal suppression d'un élève-->
+
+                <div class="container-modal-suppression-eleve-myStudent" onclick="masquerContainerModal(event)">
+
+                    <div class="modal-suppression-eleve-myStudent">
+
+                        <p>Do you really want to remove this student?</p>
+                        <div class="btns-modal-suppression-eleve-myStudent">
+                            <button>No</button>
+                            <button>Yes</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--formulaire modification d'un eleve-->
+
+                <div class="container-form-edit-student" onclick="masquerContainerModal(event)">
+
+                    <form action="" class="form-edit-student">
+                        <label for="id">ID</label>
+                        <input type="number" name="id-student" id="id-student" disabled="true" value="835343">
+                        <label for="name">Name</label>
+                        <input type="text" name="student-name" id="student-name" value="Gilles Nekam">
+                        <label for="date-birth">Date of Birth</label>
+                        <input type="date" name="date-birth" id="date-birth" value="2010-09-18">
+                        <button type="submit">Add</button>
+                    </form>
+
+                </div>
+
             </div>
 
             <div class="display-zone display-zone-grades">

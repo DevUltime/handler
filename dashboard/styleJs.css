@@ -10,3 +10,14 @@
     display: flex;
 }
 
+/*afficher le formulaire d'ajout d'un eleve*/
+
+.formActive{
+    display: flex;
+}
+
+/*afficher modal*/
+
+.modalActive{
+    display: flex;
+}

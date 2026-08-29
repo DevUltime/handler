@@ -2,9 +2,6 @@
 
 //affichade l'aside et masquer
 
-const menuHamburger = document.querySelector(".menu-hamburger-nav");
-const btnCloseAside = document.querySelector(".close-aside");
-
 function afficherAside() {
   const aside = document.querySelector(".side-bar");
   aside.classList.add("asideActive");
@@ -15,9 +12,6 @@ function masquerAside() {
   if (aside.classList.contains("asideActive"))
     aside.classList.remove("asideActive");
 }
-
-menuHamburger.addEventListener("click", afficherAside);
-btnCloseAside.addEventListener("click", masquerAside);
 
 //afficher le dashboard par defaut
 
@@ -71,10 +65,9 @@ btnsAside.addEventListener("click", (event) => {
 //integration du graphique dashboard
 
 const data = {
-  labels: ['Eval 1', 'Eval 2'],
+  labels: ["Eval 1", "Eval 2"],
   datasets: [
     {
-      
       data: [75],
       label: ["eval 1"],
       backgroundColor: ["#52A5FF"],
@@ -82,10 +75,9 @@ const data = {
       borderRadius: 15,
     },
     {
-      
       data: [1],
       label: ["eval 2"],
-      backgroundColor: ["#daff85",],
+      backgroundColor: ["#daff85"],
       borderWidth: 0,
       borderRadius: 15,
     },
@@ -95,10 +87,63 @@ const data = {
 const config = {
   type: "doughnut",
   data: data,
-  options: {
-  },
 };
 
 const ctxDashboard = document.querySelector("#chart-dashboard");
-
 const chartDasboard = new Chart(ctxDashboard, config);
+
+//afficher et masquer le formulaire d'ajout d'un eleve
+
+function afficherFormulaireAjoutEleve() {
+  const form = document.querySelector(".container-form-add-student");
+  form.classList.add("formActive");
+}
+function masquerFormulaireAjoutEleve() {
+  const form = document.querySelector(".container-form-add-student");
+  form.classList.remove("formActive");
+}
+
+function masquerContainerFormAjouterEleve(event) {
+  const eltClicked = event.target;
+  if (eltClicked === event.currentTarget) masquerFormulaireAjoutEleve();
+}
+
+//afficher et masquer les modals
+
+function afficherModal(modal) {
+  modal.classList.add("modalActive");
+}
+
+function masquerModal(modal) {
+  modal.classList.remove("modalActive");
+}
+
+//afficher les informations sur un eleve (secction myStudent)
+
+function afficherINformationElevemyStudent(event) {
+  const elt = event.target;
+  if (!elt) return;
+  const containerModalInformationMyStudent = document.querySelector(
+    ".container-modal-informations-myStudent",
+  );
+  afficherModal(containerModalInformationMyStudent);
+}
+
+function masquerContainerModal(event) {
+  const eltClicked = event.target;
+  if (eltClicked === event.currentTarget) masquerModal(event.currentTarget);
+}
+
+function afficherModalSuppresionEleveMyStudent() {
+  const containerModalSuppressionEleveMyStudent = document.querySelector(
+    ".container-modal-suppression-eleve-myStudent",
+  );
+  afficherModal(containerModalSuppressionEleveMyStudent);
+}
+
+function afficherModalModificationEleveMyStudent() {
+  const containerFormEditStudent = document.querySelector(
+    ".container-form-edit-student",
+  );
+  afficherModal(containerFormEditStudent);
+}
