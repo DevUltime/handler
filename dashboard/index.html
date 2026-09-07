@@ -18,7 +18,7 @@
 
     <header class="nav-bar">
 
-        <div class="menu-hamburger-nav" onclick = afficherAside()>
+        <div class="menu-hamburger-nav" onclick=afficherAside()>
             <div class="fst-bar fst-bar-nav"></div>
             <div class="snd-bar snd-bar-nav"></div>
         </div>
@@ -318,7 +318,7 @@
                         <p>Do you really want to remove this student?</p>
                         <div class="btns-modal-suppression-eleve-myStudent">
                             <button>No</button>
-                            <button>Yes</button>
+                            <button>Yes, delete</button>
                         </div>
                     </div>
 
@@ -335,15 +335,105 @@
                         <input type="text" name="student-name" id="student-name" value="Gilles Nekam">
                         <label for="date-birth">Date of Birth</label>
                         <input type="date" name="date-birth" id="date-birth" value="2010-09-18">
-                        <button type="submit">Add</button>
+                        <button type="submit">Validate</button>
                     </form>
 
                 </div>
 
             </div>
 
+
             <div class="display-zone display-zone-grades">
-                <h3>Aucune information sur les moyennes</h3>
+                <div class="myStudents-zone-header">
+                    <h2>Grades</h2>
+
+                    <div>
+                        <select name="class-active-grades" id="class-active-grades">
+                            <option value="terminale">Terminale</option>
+                            <option value="terminale">Seconde</option>
+                            <option value="terminale">Premiere</option>
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class="container-input-grades">
+                    <span>
+                        <img src="icons/Icon_class 1.svg" alt="icon">
+                        <span class="lesson-learned">Physique - Chimie</span>
+                    </span>
+
+                    <div>
+                        <input type="text" id="input-search-grades" placeholder="Search by name...">
+                        <img src="icons/Icon_loupe.svg" alt="">
+                    </div>
+                </div>
+
+                <div class="container-table-students-grades">
+
+                    <table class="table-students-grades">
+
+                        <thead>
+                            <tr>
+                                <th>Average</th>
+                                <th>Name</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody onclick="afficherModalModificationNote(event)">
+                            <tr>
+                                <td>15/20</td>
+                                <td>Emma Anderson</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td>13/20</td>
+                                <td>Marcus Johnson</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td>10/20</td>
+                                <td>Sophia Lee</td>
+                                <td>...</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+                
+                <!-- modal modification note eleve -->
+                <div class="container-modal-modification-note-grades" onclick="masquerContainerModal(event)">
+
+                    <div class="modal-modification-note-grades">
+                        <div class="informations-eleve-modifivation-note-grades">
+                            <div>
+                                <span>Name</span>
+                                <span>Tiobou kem jordan</span>
+                            </div>
+                            <div>
+                                <span>Date of Birth</span>
+                                <span>18/09/2010</span>
+                            </div>
+                            <div>
+                                <span>Old Grade</span>
+                                <span>15/20</span>
+                            </div>
+                        </div>
+
+                        <div class="container-new-note-grade">
+                            <span>new grade</span>
+                            <input type="text" maxlength="2" pattern="[0-9]*" inputmode="numeric" autofocus>
+                        </div>
+                        <div class="btns-modal-modification-note-grade">
+                            <button>Cancel</button>
+                            <button>yes, edit</button>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
             <div class="display-zone display-zone-ranking">

@@ -607,10 +607,190 @@ main {
   font-weight: bold;
 }
 
+/* section moyennes */
+
+.display-zone-grades {
+  display: none;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+.grades-zone-header {
+  margin-top: var(--space-md);
+  padding: var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.grades-zone-header h2 {
+  color: var(--color-primary-blue);
+}
+
+#class-active-grades {
+  background-color: transparent;
+  border: none;
+  font-weight: 700;
+  font-size: var(--font-size-lg);
+}
+#class-active-grades:focus {
+  outline: none;
+  border: 1px solid var(--color-secondary-blue);
+}
+.container-input-grades {
+  padding: 0 var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+.container-input-grades span {
+  font-weight: 700;
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-sm);
+}
+.container-input-grades span img {
+  height: 20px;
+}
+.container-input-grades div {
+  position: relative;
+}
+.container-input-grades div input {
+  width: 100%;
+  height: var(--space-xl);
+  border: var(--border);
+  border-radius: var(--radius-md);
+  padding: 0 var(--space-xl);
+}
+.container-input-grades div input:focus {
+  outline: none;
+  border: 1px solid var(--color-secondary-blue);
+}
+.container-input-grades div img {
+  position: absolute;
+  left: 7px;
+  top: 50%;
+  translate: 0 -50%;
+}
+
+.container-table-students-grades {
+  margin-top: var(--space-md);
+  padding: var(--space-md);
+  border-radius: 30px 20px 0 0;
+  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2);
+  flex: 1;
+  overflow-y: auto;
+  background-color: var(--pure-white);
+}
+.table-students-grades {
+  text-align: left;
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+
+}
+.table-students-grades tr {
+  border-bottom: var(--border);
+  padding: var(--space-md);
+}
+.table-students-grades tbody tr{
+  
+  &&:hover{
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+
+
+.table-students-grades td,
+.table-students-grades th {
+  padding: var(--space-md) var(--space-xs);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: var(--font-size-sm);
+  cursor: initial;
+    cursor: default;
+}
+  .table-students-grades th:last-child{
+    text-align: center;
+  }
+.table-students-grades td:last-child {
+  font-size: var(--font-size-xl);
+  text-align: center;
+  font-weight: 900;
+  cursor: pointer;
+}
+.container-modal-modification-note-grades{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.modal-modification-note-grades{
+  background-color: var(--pure-white);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+.informations-eleve-modifivation-note-grades{
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+.informations-eleve-modifivation-note-grades div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.informations-eleve-modifivation-note-grades div span:first-child {
+  color: var(--color-secondary-gray);
+}
+.container-new-note-grade{
+  display: flex;
+  gap: var(--space-xl);
+  white-space: nowrap;
+}
+.container-new-note-grade input{
+  height: var(--space-lg);
+  border: var(--border);
+  max-width: min-content;
+  padding:  0 var(--space-sm);
+  border-radius: var(--radius-md);
+  &&:focus{
+    outline: none;
+    border: 1px solid var(--color-primary-blue);
+  }
+}
+
+.btns-modal-modification-note-grade{
+  display: flex;
+  justify-content: space-around;
+}
+
+.btns-modal-modification-note-grade button {
+  width: 60px;
+  height: 30px;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  &&:last-child {
+    color: var(--pure-white);
+    background-color: var(--primary-green);
+  }
+}
 
 
 
-.display-zone-grades,
+
+
+
 .display-zone-ranking,
 .display-zone-examens,
 .display-zone-statistics {

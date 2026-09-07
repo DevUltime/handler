@@ -32,6 +32,7 @@ function affichageDashboard() {
 }
 
 affichageDashboard();
+// arrayDisplayZones[3].classList.add("sectionActive")
 
 //afficher les section de l'aside
 
@@ -118,6 +119,11 @@ function masquerModal(modal) {
   modal.classList.remove("modalActive");
 }
 
+function masquerContainerModal(event) {
+  const eltClicked = event.target;
+  if (eltClicked === event.currentTarget) masquerModal(event.currentTarget);
+}
+
 //afficher les informations sur un eleve (secction myStudent)
 
 function afficherINformationElevemyStudent(event) {
@@ -127,11 +133,6 @@ function afficherINformationElevemyStudent(event) {
     ".container-modal-informations-myStudent",
   );
   afficherModal(containerModalInformationMyStudent);
-}
-
-function masquerContainerModal(event) {
-  const eltClicked = event.target;
-  if (eltClicked === event.currentTarget) masquerModal(event.currentTarget);
 }
 
 function afficherModalSuppresionEleveMyStudent() {
@@ -146,4 +147,15 @@ function afficherModalModificationEleveMyStudent() {
     ".container-form-edit-student",
   );
   afficherModal(containerFormEditStudent);
+}
+
+
+// afficher le modal pour la modification des notes (grades)
+function afficherModalModificationNote(event) {
+  const elt = event.target;
+  if (!elt) return;
+  const containerModalModificationNoteGrades = document.querySelector(
+    ".container-modal-modification-note-grades",
+  );
+  afficherModal(containerModalModificationNoteGrades);
 }
