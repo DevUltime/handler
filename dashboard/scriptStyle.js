@@ -69,25 +69,40 @@ const data = {
   labels: ["Eval 1", "Eval 2"],
   datasets: [
     {
-      data: [75],
-      label: ["eval 1"],
-      backgroundColor: ["#52A5FF"],
-      borderWidth: 0,
-      borderRadius: 15,
-    },
-    {
-      data: [1],
-      label: ["eval 2"],
-      backgroundColor: ["#daff85"],
-      borderWidth: 0,
-      borderRadius: 15,
+      data: [75, 45],
+      label: ["evaluation"],
+      backgroundColor: ["#52A5FF", "#7dbcff"],
+      borderRadius: 5,
     },
   ],
+
 };
 
 const config = {
-  type: "doughnut",
+  type: "bar",
   data: data,
+  options: {
+    animation: {
+      y: {
+        duration: 1000,
+        easing: "easeOutQuart",
+        from: (ctxDashboard) => ctxDashboard.chart.scales.y.bottom,
+      },
+    },
+    scales: {
+      x: {
+        grid: {
+          display: false,
+        },
+      },
+      y: {
+        grid: {
+          display: false,
+        },
+        display: false,
+      },
+    },
+  },
 };
 
 const ctxDashboard = document.querySelector("#chart-dashboard");
@@ -127,35 +142,177 @@ function masquerContainerModal(event) {
 //afficher les informations sur un eleve (secction myStudent)
 
 function afficherINformationElevemyStudent(event) {
+
   const elt = event.target;
   if (!elt) return;
-  const containerModalInformationMyStudent = document.querySelector(
-    ".container-modal-informations-myStudent",
-  );
-  afficherModal(containerModalInformationMyStudent);
+  const container = document.querySelector(".container-modal-informations-myStudent",);
+  afficherModal(container);
+
 }
 
 function afficherModalSuppresionEleveMyStudent() {
-  const containerModalSuppressionEleveMyStudent = document.querySelector(
-    ".container-modal-suppression-eleve-myStudent",
-  );
-  afficherModal(containerModalSuppressionEleveMyStudent);
+
+  const container = document.querySelector(".container-modal-suppression-eleve-myStudent");
+  afficherModal(container);
+  
+}
+
+function masquerModalSuppresionEleveMyStudent() {
+
+  const container = document.querySelector(".container-modal-suppression-eleve-myStudent");
+  masquerModal(container);
+  
 }
 
 function afficherModalModificationEleveMyStudent() {
-  const containerFormEditStudent = document.querySelector(
-    ".container-form-edit-student",
-  );
-  afficherModal(containerFormEditStudent);
+  const container = document.querySelector(".container-form-edit-student");
+  afficherModal(container);
 }
+
+function masquerModalModificationEleveMyStudent() {
+  const container = document.querySelector(".container-form-edit-student");
+  masquerModal(container);
+}
+
 
 
 // afficher le modal pour la modification des notes (grades)
 function afficherModalModificationNote(event) {
+
   const elt = event.target;
   if (!elt) return;
-  const containerModalModificationNoteGrades = document.querySelector(
-    ".container-modal-modification-note-grades",
-  );
-  afficherModal(containerModalModificationNoteGrades);
+  const container = document.querySelector(".container-modal-modification-note-grades");
+
+  afficherModal(container);
+}
+
+function masquerModalModificationNote() {
+  const container = document.querySelector(".container-modal-modification-note-grades");
+  masquerModal(container);
+}
+
+
+
+
+//afficher les tooltips de la navbar
+
+function afficherTooltip(tooltip){
+  tooltip.classList.add("tooltipActive")
+}
+
+function masquerTooltip(tooltip){
+  tooltip.classList.remove("tooltipActive");
+}
+
+function afficherTooltipProfil(){
+
+  const tooltipProfil = document.querySelector(".tooltip-profil");
+  const tooltipNotification = document.querySelector(".tooltip-notifications");
+  tooltipProfil.classList.toggle("tooltipActive");
+  if(tooltipNotification.classList.contains("tooltipActive")) masquerTooltip(tooltipNotification);
+  
+}
+function afficherTooltipNotification(){
+
+  const tooltipProfil = document.querySelector(".tooltip-profil");
+  const tooltipNotification = document.querySelector(".tooltip-notifications");
+  tooltipNotification.classList.toggle("tooltipActive");
+  if(tooltipProfil.classList.contains("tooltipActive")) masquerTooltip(tooltipProfil);
+
+}
+//masquer les tooltips de la navBar
+
+function masquerTousLesTooltips() {
+
+  const tooltipProfil = document.querySelector(".tooltip-profil");
+  const tooltipNotification = document.querySelector(".tooltip-notifications");
+  
+  if (tooltipProfil.classList.contains("tooltipActive")) {
+    masquerTooltip(tooltipProfil);
+  }
+  if (tooltipNotification.classList.contains("tooltipActive")) {
+    masquerTooltip(tooltipNotification);
+  }
+}
+
+
+document.addEventListener("click", (event) => {
+
+  const navBar = document.querySelector(".nav-bar");
+  const tooltipProfil = document.querySelector(".tooltip-profil");
+  const tooltipNotification = document.querySelector(".tooltip-notifications");
+  const asideBar = document.querySelector(".side-bar")
+  
+  if (!navBar.contains(event.target) && 
+      !tooltipProfil.contains(event.target) && 
+      !tooltipNotification.contains(event.target) &&
+    !asideBar.contains(event.target)) {
+    masquerTousLesTooltips();
+  }
+});
+
+//changer la photo de profil
+
+  const fileInput = document.querySelector('#input-photo-profil');
+
+  fileInput.addEventListener('change', (event) => {
+    const profilePreview = document.querySelectorAll('.photo-profil');
+    const file = event.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        profilePreview.forEach((p) => {p.src = e.target.result;})
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+
+  //afficher et masquer la preview photo de profil
+
+function afficherPhotoProfil(){
+  const container = document.querySelector(".container-preview-photo-profil")
+  container.classList.add("previewActive")
+}
+
+function masquerPhotoProfil(){
+
+  const container = document.querySelector(".container-preview-photo-profil")
+  container.classList.remove("previewActive")
+}
+
+//afficher modal suppresion compte
+
+function afficherModalSuppresionCompte(){
+  const container = document.querySelector(".container-modal-suppresion-compte");
+  container.classList.add("modalActive");
+}
+
+function masquerModalSuppresionCompte(){
+  const container = document.querySelector(".container-modal-suppresion-compte");
+  container.classList.remove("modalActive");
+}
+
+//afficher et masquer modal informations teacher
+
+function afficherModalAffichageInformationsTeacher(){
+  const container = document.querySelector(".container-modal-voir-informations-teacher");
+  container.classList.add("modalActive");
+}
+
+function masquerModalAffichageInformationsTeacher(){
+  const container = document.querySelector(".container-modal-voir-informations-teacher");
+  container.classList.remove("modalActive");
+}
+
+//afficher et masquer le modal pour la modification des infos teacher
+
+function afficherModalModificationInformationsTeacher(){
+  const container = document.querySelector(".container-modal-modifier-informations-teacher");
+  container.classList.add("modalActive");
+}
+
+function masquerModalModificationInformationsTeacher(){
+  const container = document.querySelector(".container-modal-modifier-informations-teacher");
+  container.classList.remove("modalActive");
 }

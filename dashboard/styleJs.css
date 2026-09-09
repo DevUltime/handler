@@ -21,3 +21,12 @@
 .modalActive{
     display: flex;
 }
+
+/*afficher tooltips*/
+.tooltipActive{
+    display: flex;
+}
+/*afficher la photo de profil*/
+.previewActive{
+    display: flex;
+}
