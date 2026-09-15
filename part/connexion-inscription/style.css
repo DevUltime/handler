@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/*variables css*/
+:root{
+    --blue: #00288E; /*header buttons links*/
+    --blue-light: #D3E4FE; /*tabs backgroud header-icon*/
+    --text-muted: #757684; /*subtitles*/
+    --text-light: #B0B7C3; /*placeholder text*/
+    --border-color: #E0E4EA; /*input borders*/
+    --text-dark: #0B3C10; /*titles labels*/
+    --white: #FFFFFF;
+    --page-bg: #F2F3F5;
+
+    --font-family: 'Inter', arial, sans-serif;
+
+    --size-small: 14px;
+    --size-normal: 15px;
+    --size-input: 16px;
+    --size-button: 17px;
+    --size-title: 26px;
+    --size-logo: 32px;
+
+    --weight-regular: 400;
+    --weight-semi-bold: 600;
+    --weight-bold: 700;
+    --weight-extrabold: 800;
+
+    --raduis-small: 5px;
+    --raduis-medium: 10px;
+    --raduis-input: 12px;
+    --raduis-tabs: 14px;
+    --raduis-card:20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--page-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 30px 15px;
+}
+
+button {
+    font-family: inherit; /*permet que toout les boutons heritent de la police inter*/
+}
+
+.card {
+    background: var(--white);
+    width: 100%;
+    max-width: 420px; /*permet que la carte occupe tout l'espace sur des petits ecrans*/
+    /* border-radius: var(--raduis-card); */
+    overflow: hidden; /*permet de couper net tout ce qui depasse des limites de la carte*/
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);    
+}
+
+.header {
+    background: linear-gradient(180deg, var(--blue) 0%, #001c68 100%);/*bleu vers bleu foncé*/
+    padding: 40px 30px 35px;
+    text-align: center;
+    color: var(--white);
+}
+
+.header-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-icon img{
+    width: 48px;
+    height: 48px;
+}
+
+.header h1{
+    font-size: var(--size-logo);
+    font-weight: var(--weight-bold);
+    margin-bottom: 8px;
+}
+
+.header p{
+    font-size: var(--size-normal);
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.content {
+    padding: 30px 30px 35px;
+    overflow: hidden;
+}
+
+.tabs {
+    display: flex;
+    background: var(--blue-light);
+    border-radius: var(--raduis-tabs);
+    padding: 5px;
+    margin-bottom: 26px;
+    position: relative;
+}
+
+.tabs-highlight {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: calc(50% - 5px);
+    height: calc(100% - 10px);
+    background: var(--white);
+    border-radius: var(--raduis-medium);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.35s ease;
+}
+
+.tabs.signup-active .tabs-highlight{
+    transform: translateX(100%);
+}
+
+.tab{
+    flex: 1;
+    text-align: center;
+    padding: 12px 0;
+    border-radius: var(--raduis-medium);
+    font-size: var(--size-input);
+    font-weight: var(--weight-semi-bold);
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    position: relative;
+    z-index: 1;
+    transition: color 0.35s ease;
+}
+
+.tab.active{
+    color: var(--blue);
+}
+
+.forms{
+    position: relative;
+    width: 100%;
+    min-height: 430px;
+}
+
+.form-panel{
+    width: 100%;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.form-panel.visible{
+    position: relative;
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; /*accepte les clics et interaction souris normalement*/
+}
+
+.form-panel.hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.35s ease, opacity 0.35s ease, visibility 0s linear 0.35s;
+}
+
+.form-pannel.hidden.signin{
+    transform: translateX(-40px);
+}
+
+.form-pannel.hidden.signup{
+    transform: translateX(40px);
+}
+
+.title{
+    font-size: var(--size-title);
+    font-weight: var(--weight-extrabold);
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.subtitle{
+    font-size: var(--size-normal);
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 26px;
+}
+
+.field{
+    margin-bottom: 20px;
+}
+
+.field label{
+    display: block;
+    font-size: var(--size-small);
+    font-weight: var(--weight-semi-bold);
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.field input {
+    width: 100%;
+    padding: 14px 15px;
+    font-size: var(--size-input);
+    font-family: inherit;
+    border: 1px solid var(--border-color);
+    border-radius: var(--raduis-input);
+    color: var(--text-dark);
+    outline: none;
+    transition: border-color 0.2 ease;
+}
+
+.field input::placeholder{
+    color: var(--text-light);
+}
+
+.field input:focus{
+    border-color: var(--blue);
+}
+
+.options-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 26px;
+}
+
+.remember-me{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: var(--size-normal);
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.remember-me input{
+    width: 20px;
+    height: 20px;
+    accent-color: var(--blue);
+    cursor: pointer;
+}
+
+.forgot-link{
+    font-size: var(--size-normal);
+    font-weight: var(--weight-semi-bold);
+    color: var(--blue);
+    text-decoration: none;
+}
+
+.forgot-link:hover{
+    text-decoration: underline;
+}
+
+.submit-button{
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(180deg, var(--blue) 0%, #001c68 100%);
+    color: var(--white);
+    font-size: var(--size-button);
+    font-weight: var(--weight-bold);
+    font-family: inherit;
+    border: none;
+    border-radius: var(--raduis-input);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: opacity 0.2 ease;
+}
+
+.submit-button:hover{
+    opacity: 0.9;
+}
+
+.submit-button img{
+    width: 18px;
+    height: 18px;
+}
+
+.switch-text{
+    text-align: center;
+    font-size: var(--size-small);
+    color: var(--text-muted);
+    margin-top: 22px;
+}
+
+.switch-text button{
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+    color: var(--blue);
+    font-size: inherit;
+    font-weight: var(--weight-semi-bold);
+    cursor: pointer;
+}
+
+.switch-text button:hover{
+    text-decoration: underline;
+}

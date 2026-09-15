@@ -1,0 +1,314 @@
+:root {
+
+    /* Couleurs du projet */
+    --blue: #00288E;
+    /*header buttons links*/
+    --blue-light: #D3E4FE;
+    /*tabs backgroud header icon*/
+    --text-muted: #757684;
+    /*secondary text*/
+    --text-light: #B0B7C3;
+    /*placeholder text*/
+    --border-color: #E0E4EA;
+    /*input border*/
+    --text-dark: #0B1C30;
+    /*title labels*/
+    --white: #FFFFFF;
+    --page-bg: #F2F3F5;
+
+    /* Police */
+    --font-family: 'Inter', Arial, sans-serif;
+
+    /* Tailles de texte */
+    --size-small: 14px;
+    --size-normal: 15px;
+    --size-input: 16px;
+    --size-button: 17px;
+    --size-title: 26px;
+    --size-logo: 32px;
+    --size-stat:34px;
+
+    --green-bg:#D7F7E4;
+    --green-text:#1E8E5A;
+    --red-text:#C0392B;
+
+    /* Graisses de police */
+    --weight-regular: 400;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+    --weight-extrabold: 800;
+
+    /* Arrondis */
+    --radius-small: 5px;
+    --radius-medium: 10px;
+    --radius-input: 12px;
+    --radius-tabs: 14px;
+    --radius-card: 20px;
+    --raduis-pill:999px;
+
+    /* Vitesse des animations */
+    --speed: 0.35s;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: var(--font-family);
+    background-color: var(--page-bg);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 15px;
+}
+
+.card-content{
+    background-color: var(--white);
+    /* border-radius: var(--radius-card); */
+    width: 100%;
+    max-width: 420px;
+    padding: 0px 0px;
+    overflow: hidden; /*permet de couper net tout ce qui depasse des limites de la carte*/
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);   
+}
+
+.header{
+    background-color: var(--blue-light);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px;
+}
+
+.header-icon{
+    font-size: 22px;
+    color: var(--blue);
+    cursor: pointer;
+    line-height: 1;
+}
+
+.header-logo{
+    font-size: var(--size-title);
+    font-weight: var(--weight-extrabold);
+    color: var(--blue);
+}
+
+.content{
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 24px 20px 40px;
+}
+
+.page-title{
+    font-size: var(--size-title);
+    font-weight: var(--weight-extrabold);
+    color: var(--blue);
+    margin-bottom: 6px;
+}
+
+.page-subtitle{
+    font-size: var(--size-normal);
+    color: var(--text-muted);
+    margin-bottom: 22px;
+}
+
+.class-select-wrapper{
+    position: relative;
+    margin-bottom: 22px;
+}
+
+.class-select{
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    font-family: var(--font-family);
+    font-size: var(--size-input);
+    font-weight: var(--weight-semibold);
+    color: var(--text-dark);
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-medium);
+    padding: 14px 40px 14px 16px;
+    cursor: pointer;
+}
+
+.class-select-arrow{
+    position: absolute;
+    right: 16px;
+    top: 40%;
+    color: var(--text-muted);
+    pointer-events: none;
+    font-size: var(--size-small);
+}
+
+.card{
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-input);
+    padding: 22px;
+    margin-bottom: 18px;
+}
+
+.card-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.card-title{
+    font-size: var(--size-input);
+    font-weight: var(--weight-semibold);
+    color: var(--text-dark);
+}
+
+.card-icon{
+    font-size: 20px;
+    line-height: 1;
+}
+
+.card-note{
+    font-size: var(--size-normal);
+    color: var(--text-muted);
+    margin-top: 10px;
+}
+
+.stat-row{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.stat-value{
+    font-size: var(--size-stat);
+    font-weight: var(--weight-extrabold);
+    color: var(--text-dark);
+}
+
+.badge-success{
+    background-color: var(--green-bg);
+    color: var(--green-text);
+    font-size: var(--size-small);
+    font-weight: var(--weight-semibold);
+    padding: 6px 12px;
+    border-radius: var(--raduis-pill);
+}
+
+.progress-track {
+    width: 100%;
+    height: 10px;
+    background-color: var(--blue-light);
+    border-radius: var(--raduis-pill);
+    overflow: hidden;
+}
+
+.progress-fill{
+    height: 100%;
+    background-color: var(--blue);
+    border-radius: var(--raduis-pill);
+}
+
+.stat-inline {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.stat-number{
+    font-size: 28px;
+    font-weight: var(--weight-extrabold);
+}
+
+.stat-number.blue{
+    color: var(--blue);
+}
+
+.stat-number.red{
+    color: var(--red-text);
+}
+
+.stat-unit{
+    font-size: var(--size-input);
+    font-weight: var(--weight-semibold);
+    color: var(--text-dark);
+}
+
+.distribution-title{
+    font-size: var(--size-input);
+    font-weight: var(--weight-bold);
+    color: var(--blue);
+    margin-bottom: 14px;
+}
+
+.distribution-divider{
+    height: 1;
+    background-color: var(--border-color);
+    margin-bottom: 14px;
+}
+
+.distribution-labels{
+    display: flex;
+    justify-content: space-between;
+}
+
+.distribution-label{
+    font-size: var(--size-small);
+    font-weight: var(--weight-semibold);
+    color: var(--text-muted);
+}
+
+.top5-title{
+    font-size: var(--size-input);
+    font-weight: var(--weight-bold);
+    color: var(--blue);
+    margin-bottom: 16px;
+}
+
+.student-row{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 0;
+}
+
+
+.student-rank{
+    width: 35px;
+    height: 35px;
+    border-radius: var(--radius-input);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--size-normal);
+    font-weight: var(--weight-bold);
+    flex-shrink: 0;
+}
+
+.student-rank.top{
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.student-rank.other{
+    background: var(--blue-light);
+    color: var(--blue);
+}
+
+.student-name{
+    flex: 1;
+    font-size: var(--size-input);
+    font-weight: var(--weight-semibold);
+    color: var(--text-dark);
+}
+
+.student-score{
+    font-size: var(--size-normal);
+    color: var(--text-muted);
+}

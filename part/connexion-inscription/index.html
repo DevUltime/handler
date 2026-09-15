@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handler - connexion</title>
+</head>
+<body>
+    <main class="card">
+
+        <!-- header -->
+        <div class="header">
+            <div class="header-icon">
+                <img src="icons/logo_nexora.svg" alt="mon logo">
+            </div>
+         
+            <h1>Handler</h1>
+            <p>Empowering Educators, Inspiring Minds.</p>
+        </div>
+        
+        <!-- conent -->
+         <div class="content">
+
+            <!-- tabs -->
+            <div class="tabs" id="tabs">
+                <div class="tabs-highlight"></div>
+                <button class="tab active" type="button" id="tab-signin">Sign In</button>
+                <button class="tab " type="button" id="tab-signup">Sign Up</button>
+            </div>
+
+            <!-- container holding both stacked forms -->
+             <div class="forms">
+
+                <!-- SIGN IN FORM -->
+                 <section class="form-panel visible" id="form-signin">
+                    <h2 class="title">Welcome back!</h2>
+                    <p class="subtitle">Please enter your credentials to acces your dashboard.</p>
+
+                    <form>
+                        <div class="field">
+                            <label for="signin-email">Email</label>
+                            <input type="email" id="signin-email" name="email" autocomplete="email" placeholder="teacher@school.edu">
+                        </div>
+
+                        <div class="field">
+                            <label for="signin-password">Mot de passe</label>
+                            <input type="password" id="signin-password" name="password" autocomplete="current-password" placeholder="........">
+                        </div>
+
+                        <div class="options-row">
+                            <label class="remember-me">
+                                <input type="checkbox" name="remember">
+                                Remember me 
+                            </label>
+                            <a href="#" class="forgot-link">Forgot password?</a>
+                        </div>
+
+                        <button type="submit" class="submit-button">
+                            Sign In
+                            <img src="icons/arrow_back.svg" alt="">
+                        </button>
+                    </form>
+
+                    <p class="switch-text">
+                        Pas encore de compte ?
+                        <button type="button" class="switch-button" data-target="signup">Sign Up</button>
+                    </p>
+                </section>
+
+                <!-- SIGN UP FORM -->
+                 <section class="form-panel hidden signup" id="form-signup">
+                    <h2 class="title">Create account</h2>
+                    <p class="subtitle">Remplissez vos informations pour créer votre compte.</p>
+
+                    <form>
+                        <div class="field">
+                            <label for="signup-fullname">Nom complet</label>
+                            <input type="text" id="signup-fullname" name="fullname" autocomplete="name" placeholder="jean Dupont">
+                        </div>
+
+                        <div class="field">
+                            <label for="signup-email">Email</label>
+                            <input type="email" id="signin-email" name="email" autocomplete="email" placeholder="teacher@school.edu">
+                        </div>
+
+                        <div class="field">
+                            <label for="signup-password">Mot de passe</label>
+                            <input type="password" id="signup-password" name="password" autocomplete="new-password" placeholder="........">
+                        </div>
+
+                        <button type="submit" class="submit-button">
+                            Sign up
+                            <img src="icons/arrow_back.svg" alt="">
+                        </button>
+                    </form>
+
+                    <p class="switch-text">
+                        Déjà un compte ?
+                        <button type="button" class="switch-button" data-target="signin">Sign In</button>
+                    </p>
+                 </section>
+             </div>
+         </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

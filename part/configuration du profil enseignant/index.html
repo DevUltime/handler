@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Handler-configuration profile enseignant</title>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <!-- logo -->
+        <div class="logo">
+            <img src="icons/logo_nexora.svg" alt="Logo" class="logo-icon">
+            <span class="logo-text">Handler</span>
+        </div>
+
+        <!-- step indicator -->
+        <div class="steps">
+            <div class="step-circle done">1</div>
+            <div class="step-line done"></div>
+            <div class="step-circle active">2</div>
+            <div class="step-line"></div>
+            <div class="step-circle upcoming">3</div>
+        </div>
+
+        <!-- title -->
+         <h1 class="title">Configurez votre profil enseignant</h1>
+
+        <!-- subject field -->
+        <label for="subject" class="field-label">Quelle matière enseigner vous ?</label>
+        <input type="text" id="subject" class="subject-input" placeholder="Ex: Mathématiques, Physique, ...">
+
+        <!-- classes section -->
+         <div class="classes-section">
+            <div class="classes-header">
+                <span class="classes-hint">Sélectionnez toutes les classes concernées</span>
+            </div>
+
+            <div class="classes-grid" id="classesGrid">
+                <button class="class-card" type="button" data-class="6ème">6ème</button>
+                <button class="class-card" type="button" data-class="5ème">5ème</button>
+                <button class="class-card" type="button" data-class="4ème">4ème</button>
+                <button class="class-card" type="button" data-class="3ème">3ème</button>
+                <button class="class-card" type="button" data-class="2nde">2nde</button>
+                <button class="class-card" type="button" data-class="1ère">1ère</button>
+                <button class="class-card" type="button" data-class="Terminale">Terminale</button>
+            </div>
+
+            <p class="error-message" id="errorMessage"></p>
+         </div>
+
+        <!-- submit -->
+        <button class="btn-submit" id="submitBtn">
+            Go to Dashboard 
+            <img src="icons/arrow_back.svg" alt="arrow-back" class="arrow-icon">
+        </button>
+
+
+        <script src="script.js"></script>
+</body>
+
+</html>

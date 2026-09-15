@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Handler-Statistiques</title>
+</head>
+
+<body>
+
+    <main class="card-content">
+        <div class="header">
+            <span class="header-icon"><i class="fa-solid fa-bars"></i></span>
+            <span class="header-logo">Handler</span>
+            <span class="header-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+        </div>
+
+        <div class="content">
+
+            <!-- section title -->
+            <h1 class="page-title">Statistiques</h1>
+            <p class="page-subtitle">Aperçu des performances et tendances de la classe.</p>
+
+            <div class="class-select-wrapper">
+                <select id="classSelect" class="class-select">
+                    <option value="6ème">6ème</option>
+                    <option value="5ème">5ème</option>
+                    <option value="4ème">4ème</option>
+                    <option value="3ème" selected>3ème</option>
+                    <option value="2nde">2nde</option>
+                    <option value="1ère">1ère</option>
+                    <option value="Terminale">Terminale</option>
+                </select>
+                <span class="class-select-arrow"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+
+            <!-- class average -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Moyenne de la classe</span>
+                    <span class="card-icon"><i class="fa-solid fa-arrow-trend-up"></i></span>
+                </div>
+
+                <div class="stat-row">
+                    <span class="stat-value">84.2%</span>
+                    <span class="badge-success">+2.4% vs dernier trimestre</span>
+                </div>
+
+                <div class="progress-track">
+                    <div class="progress-fill" style="width: 84.2%;"></div>
+                </div>
+            </div>
+
+            <!-- high achievers -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Excellents élèves (90%+)</span>
+                    <span class="card-icon"><i class="fa-solid fa-medal"></i></span>
+                </div>
+
+                <div class="stat-inline">
+                    <span class="stat-number blue">12</span>
+                    <span class="stat-unit">élèves</span>
+                </div>
+
+                <p class="card-note">Représentant 24% de la classe.</p>
+            </div>
+
+            <!-- Needs Attention -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">A surveiller (&lt;70%)</span>
+                    <span class="card-icon"><i class="fa-solid fa-triangle-exclamation" style="color: red;"></i></span>
+                </div>
+
+                <div class="stat-inline">
+                    <span class="stat-number red">5</span>
+                    <span class="stat-unit">élèves</span>
+                </div>
+
+                <p class="card-note">Nécessitent un accompagnement avant le mi-trimestre.</p>
+            </div>
+
+            <!-- Grade Distribution -->
+            <div class="card">
+                <div class="distribution-title">Répartition des notes</div>
+                <div class="distribution-divider"></div>
+                <div class="distribution-labels">
+                    <span class="distribution-label">&lt;60%</span>
+                    <span class="distribution-label">60-69%</span>
+                    <span class="distribution-label">70-79%</span>
+                    <span class="distribution-label">80-89%</span>
+                    <span class="distribution-label">90%+</span>
+                </div>
+            </div>
+
+            <!-- top 5 students -->
+
+            <div class="card">
+                <div class="top5-title">Top 5 des élèves</div>
+
+                <div class="student-row">
+                    <span class="student-rank top">1</span>
+                    <span class="student-name">Elena Rodriguez</span>
+                    <span class="student-score">19.7/20</span>
+                </div>
+
+                <div class="student-row">
+                    <span class="student-rank other">2</span>
+                    <span class="student-name">David Chen</span>
+                    <span class="student-score">19.4/20</span>
+                </div>
+
+                <div class="student-row">
+                    <span class="student-rank other">3</span>
+                    <span class="student-name">jordan dev </span>
+                    <span class="student-score">19.4/20</span>
+                </div>
+
+                <div class="student-row">
+                    <span class="student-rank other">4</span>
+                    <span class="student-name">Tiobou jordan</span>
+                    <span class="student-score">19.0/20</span>
+                </div>
+
+                <div class="student-row">
+                    <span class="student-rank other">5</span>
+                    <span class="student-name">Maria Garcia</span>
+                    <span class="student-score">19.0/20</span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
